@@ -1,3 +1,18 @@
+plugins {
+ id "org.sonarqube" version "2.6.2"
+}
+
+
+apply plugin: "org.sonarqube"
+
+
+sonarqube {
+   properties {
+       property "sonar.projectName", "PHP :: Sample Project :: SonarQube Scanner for Gradle"
+       property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+       property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+   }
+}
 ext {
 	sourceDir = 'src'
 	testDir = 'tests'
